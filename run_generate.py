@@ -1,4 +1,4 @@
-from transformers import GPTNeoForCausalLM, AutoTokenizer
+from transformers import GPTJForCausalLM, AutoTokenizer
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -6,7 +6,7 @@ parser.add_argument("model")
 args = parser.parse_args()
 
 
-model = GPTNeoForCausalLM.from_pretrained(args.model).half().to("cuda")
+model = GPTJForCausalLM.from_pretrained(args.model).half().to("cuda")
 tokenizer = AutoTokenizer.from_pretrained(args.model)
 
 
